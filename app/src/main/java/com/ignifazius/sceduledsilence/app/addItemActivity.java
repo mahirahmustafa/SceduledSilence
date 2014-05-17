@@ -61,7 +61,7 @@ public class addItemActivity extends Activity {
     }
 
 
-    @Override
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.add_item, menu);
@@ -78,7 +78,7 @@ public class addItemActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     public void setStartingTime(View view){
         int hour = hour_start;
