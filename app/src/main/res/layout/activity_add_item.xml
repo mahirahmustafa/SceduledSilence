@@ -1,0 +1,142 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.ignifazius.sceduledsilence.app.addItemActivity"><![CDATA[
+
+    TextView
+        android:text="@string/hello_world"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    ]]>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00:00"
+        android:id="@+id/textView_start_time"
+        android:layout_marginTop="43dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/checkBox_Mo"
+        android:layout_marginLeft="28dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/OK"
+        android:id="@+id/button_OK"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button_start_time"
+        android:layout_alignEnd="@+id/button_start_time" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkbox_vibrate"
+        android:id="@+id/checkBox_vibrate"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/button_end_time"
+        android:layout_toRightOf="@+id/button_start_time" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_start_time"
+        android:id="@+id/button_start_time"
+        android:layout_below="@+id/textView_start_time"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="43dp"
+        android:clickable="true"
+        android:onClick="setStartingTime" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_end_time"
+        android:id="@+id/button_end_time"
+        android:layout_alignTop="@+id/button_start_time"
+        android:layout_alignLeft="@+id/checkBox_vibrate"
+        android:layout_alignStart="@+id/checkBox_vibrate"
+        android:onClick="setEndingTime" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00:00"
+        android:id="@+id/textView_end_time"
+        android:layout_alignTop="@+id/textView_start_time"
+        android:layout_alignRight="@+id/checkBox_vibrate"
+        android:layout_alignEnd="@+id/checkBox_vibrate" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox_Mo"
+        android:checked="false"
+        android:text="@string/monday"
+        android:layout_alignTop="@+id/checkBox_vibrate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox_Tu"
+        android:text="@string/tuesday"
+        android:layout_centerVertical="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox_We"
+        android:text="@string/wednesday"
+        android:layout_below="@+id/checkBox_Tu" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox_Th"
+        android:text="@string/thursday"
+        android:layout_below="@+id/checkBox_We"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/friday"
+        android:id="@+id/checkBox"
+        android:layout_below="@+id/checkBox_Th"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/saturday"
+        android:id="@+id/checkBox2"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sunday"
+        android:id="@+id/checkBox3"
+        android:layout_below="@+id/checkBox2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SceduledSilence</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_item">Add Time</string>
+    <string name="item_start_time">Starting Time</string>
+    <string name="item_end_time">Ending Time</string>
+    <string name="OK">OK</string>
+    <string name="title_activity_add_item">addItemActivity</string>
+    <string name="checkbox_vibrate">Vibrate?</string>
+    <string name="monday">Mo</string>
+    <string name="tuesday">Tu</string>
+    <string name="wednesday">We</string>
+    <string name="thursday">Th</string>
+    <string name="friday">Fr</string>
+    <string name="saturday">Sa</string>
+    <string name="sunday">Su</string>
+
+</resources>
