@@ -21,10 +21,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="00:00"
         android:id="@+id/textView_start_time"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginLeft="29dp"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/checkBox_Mo"
-        android:layout_marginLeft="28dp" />
+        android:layout_toRightOf="@+id/checkBox_Mo" />
 
     <Button
         android:layout_width="wrap_content"
@@ -35,7 +35,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/button_start_time"
-        android:layout_alignEnd="@+id/button_start_time" />
+        android:layout_alignEnd="@+id/button_start_time"
+        android:onClick="addToList" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -85,7 +86,7 @@
         android:id="@+id/checkBox_Mo"
         android:checked="false"
         android:text="@string/monday"
-        android:layout_alignTop="@+id/checkBox_vibrate"
+        android:layout_below="@+id/button_start_time"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -94,7 +95,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/checkBox_Tu"
         android:text="@string/tuesday"
-        android:layout_centerVertical="true" />
+        android:layout_below="@+id/checkBox_Mo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -116,7 +119,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/friday"
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBox_Fr"
         android:layout_below="@+id/checkBox_Th"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -125,8 +128,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/saturday"
-        android:id="@+id/checkBox2"
-        android:layout_below="@+id/checkBox"
+        android:id="@+id/checkBox_Sa"
+        android:layout_below="@+id/checkBox_Fr"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -134,9 +137,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sunday"
-        android:id="@+id/checkBox3"
-        android:layout_below="@+id/checkBox2"
+        android:id="@+id/checkBox_Su"
+        android:layout_below="@+id/checkBox_Sa"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_above="@+id/textView_end_time"
+        android:layout_toRightOf="@+id/checkBox_Mo"
+        android:layout_alignRight="@+id/button_end_time"
+        android:layout_alignEnd="@+id/button_end_time" />
 
 </RelativeLayout>

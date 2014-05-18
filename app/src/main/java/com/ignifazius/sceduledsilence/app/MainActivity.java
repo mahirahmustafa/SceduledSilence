@@ -23,26 +23,15 @@ public class MainActivity extends Activity {
     ArrayList<String> valueList;
     ListAdapter myAdapter;
     ListView myListView;
-    SimpleAdapter mySimpleAdapter;
-
+    static SimpleAdapter mySimpleAdapter;
+    static List<Map<String, String>> data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        valueList = new ArrayList<String>();
-        for (int i = 0; i < 10; i++){
-            valueList.add("value "+i);
-        }
         myListView = (ListView)findViewById(R.id.listView);
-        List<Map<String, String>> data = new ArrayList<Map<String, String>>();
-        Map<String, String> datum = new HashMap<String, String>(2);
-        datum.put("title", "Data Warehousing");
-        datum.put("time", "9:45 - 12:15");
-        data.add(datum);
-        datum = new HashMap<String, String>(2);
-        datum.put("title", "Something");
-        datum.put("time", "12:45 - 16:15");
-        data.add(datum);
+        data = new ArrayList<Map<String, String>>();
+
         mySimpleAdapter = new SimpleAdapter(this, data, android.R.layout.simple_list_item_2, new String[] {"title", "time"},new int[] {android.R.id.text1, android.R.id.text2});
         myListView.setAdapter(mySimpleAdapter);
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -58,8 +47,23 @@ public class MainActivity extends Activity {
 //            startActivity(intent);
             }
         });
+
     }
 
+    public static void addItemToList(SceduledItem item){
+        Map<String, String> event = new HashMap<String, String>(2);
+        event.put("title", item.getName());
+        event.put("time",intToStringTime(item.getHour_start())+":"+intToStringTime(item.getMinute_start())+ " - " + intToStringTime(item.getHour_end()) +":"+ intToStringTime(item.getMinute_end()));
+        data.add(event);
+        mySimpleAdapter.notifyDataSetChanged();
+    }
+
+    public static String intToStringTime(int value){
+        if (value < 10){
+            return "0" + value;
+        }
+        return ""+value;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

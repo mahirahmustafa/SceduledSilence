@@ -2,10 +2,13 @@ package com.ignifazius.sceduledsilence.app;
 
 import android.app.Activity;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -17,6 +20,8 @@ public class addItemActivity extends Activity {
     int hour_end = 0;
     int minute_start = 0;
     int minute_end = 0;
+    EditText eventName;
+    CheckBox mo, tu, we, th, fr, sa, su, vib;
 
     TimePickerDialog.OnTimeSetListener startingTimeListener = new TimePickerDialog.OnTimeSetListener() {
         @Override
@@ -58,27 +63,16 @@ public class addItemActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
+        eventName =(EditText)findViewById(R.id.editText);
+        mo = (CheckBox)findViewById(R.id.checkBox_Mo);
+        tu = (CheckBox)findViewById(R.id.checkBox_Tu);
+        we = (CheckBox)findViewById(R.id.checkBox_We);
+        th = (CheckBox)findViewById(R.id.checkBox_Th);
+        fr = (CheckBox)findViewById(R.id.checkBox_Fr);
+        sa = (CheckBox)findViewById(R.id.checkBox_Sa);
+        su = (CheckBox)findViewById(R.id.checkBox_Su);
+        vib = (CheckBox)findViewById(R.id.checkBox_vibrate);
     }
-
-
-/*    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.add_item, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
 
     public void setStartingTime(View view){
         int hour = hour_start;
@@ -100,6 +94,8 @@ public class addItemActivity extends Activity {
     }
 
     public void addToList(View view){
-
+        SceduledItem item = new SceduledItem(eventName.getText().toString(),mo.isChecked(),tu.isChecked(),we.isChecked(),th.isChecked(),fr.isChecked(),sa.isChecked(),su.isChecked(),vib.isChecked(),hour_start,minute_start,hour_end,minute_end);
+        MainActivity.addItemToList(item);
+        this.finish();
     }
 }
