@@ -11,8 +11,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 
 public class addItemActivity extends Activity {
@@ -92,6 +95,14 @@ public class addItemActivity extends Activity {
         TimePickerDialog picker = new TimePickerDialog(this, endingTimeListener, hour, minute, true);
         picker.show();
     }
+
+    public void testAndDebug(View view){
+        //String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        String currentDateTimeString = DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date());
+        Toast test =Toast.makeText(this, currentDateTimeString, Toast.LENGTH_SHORT);
+        test.show();
+    }
+
 
     public void addToList(View view){
         SceduledItem item = new SceduledItem(eventName.getText().toString(),mo.isChecked(),tu.isChecked(),we.isChecked(),th.isChecked(),fr.isChecked(),sa.isChecked(),su.isChecked(),vib.isChecked(),hour_start,minute_start,hour_end,minute_end);
