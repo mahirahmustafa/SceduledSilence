@@ -151,4 +151,14 @@
         android:layout_alignRight="@+id/button_end_time"
         android:layout_alignEnd="@+id/button_end_time" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="debug"
+        android:id="@+id/button"
+        android:layout_alignTop="@+id/checkBox_Sa"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="testAndDebug" />
+
 </RelativeLayout>
